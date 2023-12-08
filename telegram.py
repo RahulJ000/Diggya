@@ -30,7 +30,7 @@ elif command == '/g0':
     bot.sendMessage(chat_id,
     str("Green led is OFF"))
     GPIO.output(green_led_pin, False)
-    bot = telepot.Bot('6558187738:AAHvdvVes5nfG2RyLWgm7zZrzTU87DzqYiY')
+    bot = telepot.Bot('')
     print (bot.getMe())
     MessageLoop(bot,handle).run_as_thread()
     print ('Listening....')
