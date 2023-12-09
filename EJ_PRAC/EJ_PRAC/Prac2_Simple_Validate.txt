@@ -1,0 +1,50 @@
+html code:
+
+<html>
+    <head>
+        <title>Validate</title>
+    </head>
+    <body>
+        <form action="Servlet" method="post">
+            <label for="name" />User Name:
+            <input type="text" id="name" name="name" />
+            <br><br>
+            <label for="psw" />Password:
+            <input type="password" id="psw" name="psw" />
+            <br><br>
+            <button type="submit">Login</button>
+        </form>
+    </body>
+</html>
+
+
+servlet code:
+
+package pack;
+
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+
+public class Servlet extends HttpServlet
+{
+    public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException
+    {
+        res.setContentType("text/html");
+        res.setCharacterEncoding("UTF-8");
+        
+        PrintWriter out = res.getWriter();
+        
+        String name = req.getParameter("name");
+        String psw = req.getParameter("psw");
+        
+        if (psw.equals("admin"))
+        {
+            out.print("<h2>Welcome " + name + "</h2>");
+        }
+        else
+        {
+            out.print("<h2>Invalid User</h2>");
+        }
+    }
+}

@@ -1,0 +1,41 @@
+using System;
+namespace shubhamawp
+{
+ class Principal //base class
+ {
+ public void display()
+ {
+ Console.WriteLine("Principle base class");
+
+ }
+ class Teacher : Principal //Derived class 1
+ {
+ public void displayone()
+ {
+ Console.WriteLine("Derived class Teacher");
+ }
+ }
+ class Student : Principal // Derived class 2
+ {
+ public void displaytwo()
+ {
+ Console.WriteLine("Derived class student");
+ }
+ }
+ class Program
+ {
+ static void Main(String[] args)
+ {
+ Principal g = new Principal();
+ Teacher d = new Teacher();
+ Student s = new Student();
+
+ g.display();
+ d.display();
+ d.displayone();
+ s.display();
+ s.displaytwo();
+ }
+ }
+ }
+ }

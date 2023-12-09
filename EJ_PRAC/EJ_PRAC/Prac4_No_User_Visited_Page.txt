@@ -1,0 +1,58 @@
+html code:
+
+<html>
+    <head>
+        <title>Login Form</title>
+    </head>
+    <body>
+        <h1>Login Cookie for Demo</h1>
+        <form action="Servlet" method="get">
+            Enter User ID: <input id="txtID" name="txtID" type="text" />
+            <br><br>
+            Enter Password: <input type="password" name="txtPSW" />
+            <br><br>
+            <input type="reset" />
+            <br>
+            <input type="submit" value="Click to Login" />
+        </form>
+    </body>
+</html>
+
+
+servlet code:
+
+package pack;
+
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+
+public class Servlet extends HttpServlet
+{
+    static int i=1;
+    public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException
+    {
+        res.setContentType("text/html");
+        res.setCharacterEncoding("UTF-8");
+        
+        PrintWriter out = res.getWriter();
+        
+        String k = String.valueOf(i);
+        
+        Cookie c = new Cookie("visit", k);
+        res.addCookie(c);
+        
+        int j = Integer.parseInt(c.getValue());
+        
+        if (j == 1)
+        {
+            out.println("<h1>Welcome</h1>");
+        }
+        else
+        {
+            out.println("<font color=blue>oho genious</font><br>");
+            out.println("You visited " + i + "times");
+        }
+        i++;
+    }
+}

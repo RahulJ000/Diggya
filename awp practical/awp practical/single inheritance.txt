@@ -1,0 +1,26 @@
+using System;
+namespace shubhamawp {
+ class Animal 
+ {
+ public string name;
+ public void display() {
+ Console.WriteLine("I am an Animal");
+ }
+ }
+ class Dog : Animal 
+ {
+ public void getName()
+ {
+ Console.WriteLine("My name is " + name);
+ }
+ }
+ class Program{
+ static void Main(String[] args)
+ {
+ Dog h = new Dog();
+ h.name = "Tommy";
+h.display();
+h.getName();
+ }
+ }
+}

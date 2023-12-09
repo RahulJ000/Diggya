@@ -1,0 +1,72 @@
+html code:
+
+<form action="Servlet" method="post">
+    <label for="value" />Enter Value:
+    <input id="value" name="value" type="number" />
+    <label for="type" />Choose Type:
+    <select id="type" name="type">
+        <option value="">Select</option>
+        <option value="r2d">r2d</option>
+        <option value="d2r">d2r</option>
+    </select>
+    <button type="submit">Convert</button>
+</form>
+
+
+servlet code:
+
+package pack;
+
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import javax.ejb.EJB;
+import mybean.ccbeans;
+
+public class Servlet extends HttpServlet
+{
+    @EJB ccbeans obj;
+    public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException
+    {
+        res.setContentType("text/html");
+        res.setCharacterEncoding("UTF-8");
+        
+        PrintWriter out = res.getWriter();
+        
+        double value = Double.parseDouble(req.getParameter("value"));
+        String type = req.getParameter("type");
+        
+        if (type.equals("r2d"))
+        {
+            out.print("<h1>" + value + " rupeess is equals to " + obj.r2d(value) + " dollars."+ "</h1>");
+        }
+        else if (type.equals("d2r"))
+        {
+            out.print("<h1>" + value + " dollars is equals to " + obj.d2r(value) + " rupees" + "</h1>");
+        }
+        else
+        {
+            out.print("<h1>Invalid Request</h1>");
+        }
+    }
+}
+
+
+bean code:
+
+package mybean;
+
+import javax.ejb.Stateless;
+
+
+@Stateless
+public class ccbeans {
+    public double r2d(double r)
+    {
+        return r/83.24;
+    }
+    public double d2r(double d)
+    {
+        return d*83.24;
+    }
+}

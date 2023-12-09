@@ -1,0 +1,37 @@
+html code:
+
+<html>
+    <head>
+        <title>Working with JSTL</title>
+    </head>
+    <body>
+        <form action="jsp.jsp">
+            <label for="fname" />Enter First Name:
+            <input type="text" id="fname" name="fname" />
+            <label for="lname" />Enter Last Name:
+            <input type="text" id="lname" name="lname" />
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>
+
+
+jsp code:
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+    </head>
+    <body>
+        <h1>Hello ${param.fname} ${param.lname}</h1>
+        <br><br>
+        <h2>Welcome to World of JSTL</h2>
+        <br><br>
+        <h3>is 5 < 10? ${5<10} </h3>
+        <br><br>
+        <h4>You Rocks!</h4>
+    </body>
+</html>

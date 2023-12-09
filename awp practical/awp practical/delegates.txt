@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+namespace Shubhamawp
+{
+ delegate void Mydelegate(int x, int y);
+ public class calculatedelegate
+ {
+ public static void Add(int x, int y)
+ {
+ Console.WriteLine("Addition is " + (x + y));
+ }
+ public static void sub(int x, int y)
+ {
+ Console.WriteLine("subtraction is " + (x - y));
+ }
+ public static void Multiply(int x, int y)
+ {
+ Console.WriteLine("Multiply is " + (x * y));
+ }
+  public static void Division(int x, int y)
+ {
+ Console.WriteLine("Division is " + (x / y));
+ }
+ class Program
+ {
+ public static void Main(string[] args)
+ {
+ Mydelegate obj = new Mydelegate(calculatedelegate.Add);
+ obj(6, 4);
+ Mydelegate obj1 = new Mydelegate(calculatedelegate.sub);
+ obj1(2, 5);
+ Mydelegate obj2 = new Mydelegate(calculatedelegate.Multiply);
+ obj2(2, 5);
+ Mydelegate obj3 = new Mydelegate(calculatedelegate.Division);
+ obj3(2, 5);
+ Console.WriteLine("\n");
+ }
+ }
+ } }

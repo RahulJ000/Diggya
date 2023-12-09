@@ -1,0 +1,35 @@
+using System;
+namespace shubhamawp
+{
+class Grandfather // Base class
+ {
+ public void display()
+ {
+ Console.WriteLine("Grandfather.....");
+ }
+ }
+ class Father : Grandfather // Derived class 1
+ {
+ public void displayone()
+ {
+ Console.WriteLine("Father.....");
+ }
+ }
+ class Son : Father // Derived class 2
+ {
+ public void displaytwo()
+ {
+ Console.WriteLine("Son....");
+ }
+ }
+ class Program
+ {
+ static void Main(String[] args)
+ {
+ Son s = new Son();
+ s.display();
+ s.displayone();
+ s.displaytwo();
+ }
+ }
+}

@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+namespace ShubhamAWP
+{
+ class Program
+ {
+ static void Main(String[] args)
+ {
+ double a,b,c,d,dis,x1,x2;
+ Console.WriteLine("Enter the a b c values :");
+ a=Convert.ToDouble(Console.ReadLine());
+ b=Convert.ToDouble(Console.ReadLine());
+ c=Convert.ToDouble(Console.ReadLine());
+ if (a==0){
+ x1=-c/b;
+ Console.WriteLine("Root are linear "+x1);
+ }
+ else{
+ dis=b*b-4*a*c;
+ d=2*a;
+ if(dis>0){
+ Console.WriteLine(" The Root are real and distinct");
+ x1=(-b/d)+(Math.Sqrt(dis)/d);
+x2=(-b/d)-(Math.Sqrt(dis)/d);
+ Console.WriteLine("The root are "+x1+" and "+ x2);
+ } 
+ else if(dis==0){
+ Console.WriteLine(" The Root are repeated roots: " );
+ x1=(-b/d);
+ Console.WriteLine("The root are :"+x1);
+ }
+ else{
+ Console.WriteLine("The root are imaginary roots ");
+ x1=-b/d;
+ x2=(Math.Sqrt((4*a*c-(b*b)))/d);
+ Console.WriteLine("The Root 1:"+x1+" i "+x2);
+ Console.WriteLine("The Root 2:"+x1+"-i "+x2);
+ }
+ }
+ }
+ }
+ }

@@ -1,0 +1,31 @@
+using System;
+namespace shubhamawp
+{
+ class TestTemperature
+ {
+ public static void Main(string[] args)
+ {
+ Temperature temperature = new Temperature();
+ try
+ {
+ temperature.showTemp();
+ }
+ catch (TempIsZeroException e)
+ {
+ Console.WriteLine("TempIsZeroException: (0) " + e.Message);
+ }
+ }
+ }
+ public class TempIsZeroException : Exception{
+ public TempIsZeroException(string message) : base(message) {
+ }
+ }
+ public class Temperature{
+ int temperature = 0;
+ public void showTemp(){
+ if (temperature == 0){
+ throw (new TempIsZeroException("Zero Temperature found"));
+ }
+ else{
+ Console.WriteLine("Temperature: (0) " + temperature);
+ } } } }

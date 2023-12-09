@@ -1,0 +1,33 @@
+using System;
+namespace shubhamawp
+{
+ public class Overloading //class name
+ {
+ public static int Add(int num1, int num2)
+ {
+ return num1 + num2;
+ }
+ public static double Add(double num1, double num2, double num3)
+ {
+ return num1 + num2 + num3;
+ }
+ public static int Multiply(int num1, int num2)
+ {
+ return num1 * num2;
+ }
+ public static int Multiply(int num1, int num2, int num3)
+ {
+ return num1 * num2 * num3;
+ }
+ }
+ public class Program
+ {
+ public static void Main(string[] args)
+ {
+ Console.WriteLine("Additin of 2 int Varrible: " + Overloading.Add(2, 3));
+ Console.WriteLine("Additin of 3 double Varrible: " + Overloading.Add(2, 3, 5));
+ Console.WriteLine("Multiply of 2 Varrible: " + Overloading.Multiply(2, 3));
+ Console.WriteLine("Multiply of 3 Varrible: " + Overloading.Multiply(2, 3, 2));
+ }
+ }
+}

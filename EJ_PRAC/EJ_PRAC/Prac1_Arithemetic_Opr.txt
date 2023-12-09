@@ -1,0 +1,65 @@
+html code:
+
+<html>
+    <head>
+        <title>Arithmetic Operation</title>
+    </head>
+    <form action="Servlet" method="post">
+        <label for="num1" />Enter first number:
+        <input type="number" id="num1" name="num1" />
+        <br><br>
+        <label for="num2" />Enter second number:
+        <input type="number" id="num2" name="num2" />
+        <br><br>
+        <select name="opr">
+            <option>Select</option>
+            <option value="+">Sum</option>
+            <option value="-">Subtract</option>
+            <option value="*">Product</option>
+            <option value="/">Division</option>
+        </select>
+        <br><br>
+        <button type="submit">Perform</button>
+    </form>
+</html>
+
+
+servlet code:
+
+package pack;
+
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+
+public class Servlet extends HttpServlet
+{
+    public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException
+    {
+        res.setContentType("text/html");
+        res.setCharacterEncoding("UTF-8");
+        
+        PrintWriter out = res.getWriter();
+        
+        int num1 = Integer.parseInt(req.getParameter("num1"));
+        int num2 = Integer.parseInt(req.getParameter("num2"));
+        String opr = req.getParameter("opr");
+        
+        if (opr.equals("+"))
+        {
+            out.print("<h2>Sum: " + (num1+num2) + "</h2>");
+        }
+        if (opr.equals("-"))
+        {
+            out.print("<h2>Subtract: " + (num1-num2) + "</h2>");
+        }
+        if (opr.equals("*"))
+        {
+            out.print("<h2>Product: " + (num1*num2) + "</h2>");
+        }
+        if (opr.equals("/"))
+        {
+            out.print("<h2>Division: " + (num1/num2) + "</h2>");
+        }
+    }
+}

@@ -1,0 +1,71 @@
+default.aspx
+
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="calcontrol.WebForm1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:Calendar ID="Calendar1" runat="server" OnSelectionChanged="Calendar1_SelectionChanged" OnDayRender="Calendar1_DayRender"></asp:Calendar>
+            <asp:Calendar ID="Calendar2" runat="server"></asp:Calendar>
+            <br />
+            <asp:Label ID="Label1" runat="server" Text="No of days is:"></asp:Label>
+&nbsp;<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
+        </div>
+    </form>
+</body>
+</html>
+
+
+default.cs.aspx
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace calcontrol
+{
+    public partial class WebForm1 : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Calendar1_SelectionChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Calendar1_DayRender(object sender, DayRenderEventArgs e)
+        {
+            if (e.Day.Date.Day == 19)
+                e.Cell.Controls.Add(new LiteralControl("</br>Ganesh Chaturthi"));
+
+            if ((e.Day.Date >= new DateTime(2023, 9, 1)) && (e.Day.Date <= new DateTime(2023, 9, 19)))
+            {
+                e.Cell.BackColor = System.Drawing.Color.Yellow;
+                e.Cell.BorderColor = System.Drawing.Color.Red;
+                e.Cell.BorderWidth = new Unit(5);
+                if (e.Day.IsOtherMonth)
+                {
+                    e.Cell.Controls.Clear();
+                }
+            }
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            TimeSpan t = Calendar2.SelectedDate - Calendar1.SelectedDate;
+            Label1.Text += t.Days.ToString();
+        }
+    }
+}

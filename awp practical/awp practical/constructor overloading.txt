@@ -1,0 +1,38 @@
+using System;
+namespace ShubhamAWP
+{
+ class Program
+ {
+ int x, y;
+ double f;
+ string s;
+ public Program(int a, double b)
+ {
+ x = a;
+ f = b;
+ }
+ public Program(int a, string b)
+ {
+ y = a;
+ s = b;
+ }
+ public void show()
+ {
+ Console.WriteLine("1st constructor(int+float):{0}", (x + f));
+ }
+ public void show1()
+ {
+ Console.WriteLine("2nd Contructor(int+string):{0}", (s + y));
+ }
+ class CFG
+ {
+ static void Main()
+ {
+ Program q = new Program(10, 20.0);
+ q.show();
+ Program q1 = new Program(10, " shubham ");
+ q1.show1();
+ }
+ }
+ }
+}

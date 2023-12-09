@@ -1,0 +1,39 @@
+using System;
+interface IShape //Interface 1
+{
+ double GetArea();
+}
+interface IColor//Interface 2
+{
+ string GetColor();
+}
+class Rectangle : IShape, IColor // Base class
+{
+ private double length;
+ private double breadth;
+ private string color;
+ public Rectangle(double length, double breadth, string color)
+ {
+ this.length = length;
+ this.breadth = breadth;
+ this.color = color;
+ }
+
+public double GetArea()
+ {
+ return length * breadth;
+ }
+ public string GetColor()
+ {
+ return color;
+ }
+}
+class Program
+{
+ static void Main(string[] args)
+ {
+ Rectangle rect = new Rectangle(5, 10, "blue");
+ Console.WriteLine("Area of rectangle: " + rect.GetArea());
+ Console.WriteLine("Color of rectangle: " + rect.GetColor());
+ }
+}
