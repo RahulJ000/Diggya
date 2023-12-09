@@ -19,6 +19,7 @@ while(1):
     GPIO.output(33,False)
     print("LED 4 IS OFF")
     time.sleep(2.5)
+    
     GPIO.output(7,True)
     print("LED 1 IS FINALLY ON")
     time.sleep(3.5)
@@ -31,6 +32,7 @@ while(1):
     GPIO.output(33,True)
     print("LED 4 IS FINALLY ON")
     time.sleep(5)
+    
     GPIO.output(7,False)
     print("LED 1 IS OFF")
     time.sleep(1)
@@ -43,5 +45,6 @@ while(1):
     GPIO.output(33,False)
     print("LED 4 IS OFF")
     time.sleep(2.5)
+    
     print("PROGRAM COMPLETE!")
     GPIO.cleanup() 
