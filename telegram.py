@@ -1,3 +1,5 @@
+#terminal command : sudo pip3 install telepot 
+
 import datetime
 import telepot
 from telepot.loop import MessageLoop
