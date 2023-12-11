@@ -1,4 +1,4 @@
-#terminal command : sudo pip3 install telepot 
+# terminal command : sudo pip3 install telepot 
 
 import datetime
 import telepot
