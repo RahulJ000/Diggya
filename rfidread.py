@@ -1,6 +1,7 @@
+# sudo nano writetest.py 
 # sudo pip3 install mfrc522
 # sudo raspi-config
-# After that go to interfacing option and enable the SPI and finish
+# Interfacing option -> enable the SPI and finish
 # sudo nano read.py
 # sudo python3 writetest.py 
 
