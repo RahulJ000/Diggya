@@ -1,5 +1,5 @@
 # cd (file location)
-# sudo python clock.py 
+# sudo python3 clock.py 
 
 from time import sleep
 import tm1637
