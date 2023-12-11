@@ -1,3 +1,5 @@
+# sudo raspi-config -> enable camera
+
 import time 
 from picamera import PiCamera  
 camera = PiCamera()  
