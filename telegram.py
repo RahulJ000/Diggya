@@ -23,12 +23,10 @@ elif command == '/r0':
     bot.sendMessage(chat_id, str("Red led is OFF"))
     GPIO.output(red_led, False)
 elif command == '/g1':
-    bot.sendMessage(chat_id,
-    str("Green led is ON"))
+    bot.sendMessage(chat_id, str("Green led is ON"))
     GPIO.output(green_led, True)
 elif command == '/g0':
-    bot.sendMessage(chat_id,
-    str("Green led is OFF"))
+    bot.sendMessage(chat_id, str("Green led is OFF"))
     GPIO.output(green_led, False)
     bot = telepot.Bot('')
     print (bot.getMe())
