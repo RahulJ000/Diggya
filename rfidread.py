@@ -5,7 +5,6 @@
 # sudo nano read.py
 # sudo python3 writetest.py 
 
-
 import RPi.GPIO as GPIO
 from mfrc522 import SimpleMFRC522
 
