@@ -3,11 +3,11 @@ import telepot
 from telepot.loop import MessageLoop
 import RPi.GPIO as GPIO
 from time import sleep
-red_led_pin = 21
-green_led_pin = 20
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(red_led_pin, GPIO.OUT)
-GPIO.setup(green_led_pin, GPIO.OUT)
+red_led = 7
+green_led = 11
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(red_led, GPIO.OUT)
+GPIO.setup(green_led, GPIO.OUT)
 now = datetime.datetime.now()
 def handle(msg):
     chat_id = msg['chat']['id']
@@ -18,18 +18,18 @@ if command == '/hi':
     bot.sendMessage (chat_id, str("Hi! "))
 elif command == '/r1':
     bot.sendMessage(chat_id, str("Red led is ON"))
-    GPIO.output(red_led_pin, True)
+    GPIO.output(red_led, True)
 elif command == '/r0':
     bot.sendMessage(chat_id, str("Red led is OFF"))
-    GPIO.output(red_led_pin, False)
+    GPIO.output(red_led, False)
 elif command == '/g1':
     bot.sendMessage(chat_id,
     str("Green led is ON"))
-    GPIO.output(green_led_pin, True)
+    GPIO.output(green_led, True)
 elif command == '/g0':
     bot.sendMessage(chat_id,
     str("Green led is OFF"))
-    GPIO.output(green_led_pin, False)
+    GPIO.output(green_led, False)
     bot = telepot.Bot('')
     print (bot.getMe())
     MessageLoop(bot,handle).run_as_thread()
