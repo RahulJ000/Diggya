@@ -1,0 +1,83 @@
+WebForm1.aspx
+
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="treeview.WebForm1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:TreeView ID="TreeView1" runat="server" OnSelectedNodeChanged="TreeView1_SelectedNodeChanged" >
+                <Nodes>
+                    <asp:TreeNode Text="tybscit" Value="tybscit" ShowCheckBox="True" Checked="True">
+                        <asp:TreeNode Text="sem 5" Value="sem 5" ShowCheckBox="True" Checked="True">
+                            <asp:TreeNode Text="ai" Value="ai" ShowCheckBox="True" Checked="True"></asp:TreeNode>
+                            <asp:TreeNode Text="awp" Value="awp" ShowCheckBox="True" Checked="True"></asp:TreeNode>
+                            <asp:TreeNode Text="spm" Value="spm" ShowCheckBox="True" Checked="True"></asp:TreeNode>
+                            <asp:TreeNode Text="ej" Value="ej" ShowCheckBox="True" Checked="True"></asp:TreeNode>
+                            <asp:TreeNode Text="iot" Value="iot" ShowCheckBox="True" Checked="True"></asp:TreeNode>
+                        </asp:TreeNode>
+                        <asp:TreeNode Text="sem 6" Value="New Node" ShowCheckBox="True" Checked="True">
+                            <asp:TreeNode Text="gis" Value="gis" ShowCheckBox="True" Checked="True"></asp:TreeNode>
+                            <asp:TreeNode Text="bi" Value="bi" ShowCheckBox="True" Checked="True"></asp:TreeNode>
+                            <asp:TreeNode Text="sqa" Value="sqa" ShowCheckBox="True" Checked="True"></asp:TreeNode>
+                            <asp:TreeNode Text="sic" Value="sic" ShowCheckBox="True" Checked="True"></asp:TreeNode>
+                            <asp:TreeNode Text="cl" Value="cl" ShowCheckBox="True" Checked="True"></asp:TreeNode>
+                        </asp:TreeNode>
+                    </asp:TreeNode>
+                </Nodes>
+            </asp:TreeView>
+            <asp:DataList ID="DataList1" runat="server">
+                <ItemTemplate>
+                    <%#Eval("Text") %>
+                </ItemTemplate>
+            </asp:DataList>
+            <br />
+            <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
+            <br />
+            <br />
+        </div>
+    </form>
+</body>
+</html>
+
+
+
+WebForm1.aspx.cs
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace treeview
+{
+    public partial class WebForm1 : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void TreeView1_SelectedNodeChanged(object sender, EventArgs e)
+        {
+            Response.Write("You have selected the option:" + TreeView1.SelectedValue);
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            TreeNodeCollection T;
+            T = TreeView1.CheckedNodes;
+            DataList1.DataSource = T;
+            DataList1.DataBind();
+            DataList1.Visible = true;
+
+        }
+    }
+}
