@@ -1,0 +1,105 @@
+WebForm2.aspx
+
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm2.aspx.cs" Inherits="treeview.WebForm2" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <style type="text/css">
+        .auto-style1 {
+            margin-left: 40px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:Label ID="Label1" runat="server" Text="Name"></asp:Label>
+            <asp:TextBox ID="TextBox1" runat="server" style="margin-bottom: 0px"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="Name cant be empty" ForeColor="Red"></asp:RequiredFieldValidator>
+            <br class="auto-style1" />
+            <asp:Label ID="Label2" runat="server" Text="Password"></asp:Label>
+&nbsp;
+            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox2" ErrorMessage="Password cant be empty" ForeColor="Red"></asp:RequiredFieldValidator>
+            <br class="auto-style1" />
+            <asp:Label ID="Label3" runat="server" Text="Confirm password"></asp:Label>
+&nbsp;<asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBox3" ErrorMessage="cant be empty" ForeColor="Red"></asp:RequiredFieldValidator>
+&nbsp;
+            <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="TextBox2" ControlToValidate="TextBox3" ErrorMessage="enter same password" ForeColor="Red"></asp:CompareValidator>
+            <br class="auto-style1" />
+            <asp:Label ID="Label4" runat="server" Text="Age"></asp:Label>
+&nbsp;<asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="TextBox4" ErrorMessage="cant be empty" ForeColor="Red"></asp:RequiredFieldValidator>
+&nbsp;
+            <asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="TextBox4" ErrorMessage="18-28" MaximumValue="28" MinimumValue="18" ForeColor="Red"></asp:RangeValidator>
+            <br class="auto-style1" />
+            <asp:Label ID="Label5" runat="server" Text="Email id"></asp:Label>
+            <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBox5" ErrorMessage="cant be empty" ForeColor="Red"></asp:RequiredFieldValidator>
+&nbsp;<asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="email id format is wrong" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ForeColor="Red"></asp:RegularExpressionValidator>
+            <br class="auto-style1" />
+            <asp:Label ID="Label6" runat="server" Text="User id"></asp:Label>
+            <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="TextBox6" ErrorMessage="cant be empty" ForeColor="Red"></asp:RequiredFieldValidator>
+&nbsp;</div>
+        <p>
+&nbsp;<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </p>
+    </form>
+</body>
+</html>
+
+
+WebForm2.aspx.cs
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace treeview
+{
+    public partial class WebForm2 : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Write("Submitted");
+        }
+    }
+}
+
+
+Web.config
+
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  For more information on how to configure your ASP.NET application, please visit
+  https://go.microsoft.com/fwlink/?LinkId=169433
+  -->
+<configuration>
+	<appSettings>
+		<add key ="ValidationSettings:UnobstrusiveValidationMode" value="none"/>
+	</appSettings>
+  <system.web>
+    <compilation debug="true" targetFramework="4.7.2" />
+    <httpRuntime targetFramework="4.7.2" />
+  </system.web>
+  <system.codedom>
+    <compilers>
+      <compiler language="c#;cs;csharp" extension=".cs" type="Microsoft.CodeDom.Providers.DotNetCompilerPlatform.CSharpCodeProvider, Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" warningLevel="4" compilerOptions="/langversion:default /nowarn:1659;1699;1701" />
+      <compiler language="vb;vbs;visualbasic;vbscript" extension=".vb" type="Microsoft.CodeDom.Providers.DotNetCompilerPlatform.VBCodeProvider, Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" warningLevel="4" compilerOptions="/langversion:default /nowarn:41008 /define:_MYTYPE=\&quot;Web\&quot; /optionInfer+" />
+    </compilers>
+  </system.codedom>
+</configuration>
