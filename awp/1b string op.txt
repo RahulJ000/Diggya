@@ -1,0 +1,35 @@
+using System;
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string a = "Advanced Web Programming";
+            Console.WriteLine("\nOriginal string: " + a);
+
+            Console.WriteLine("\nLength of string: " + a.Length);
+            Console.WriteLine("\nUppercase: " + a.ToUpper());
+            Console.WriteLine("\nLowercase: " + a.ToLower());
+
+            string p = " Practical";
+            string cat = string.Concat(a, p);
+            string t = p.Trim();
+            Console.WriteLine("\nConcatenation: " + cat);
+            Console.WriteLine("\nTrim: " + t);
+
+            string con = "Program";
+            Console.WriteLine("\nDoes original string contain the word 'program'?\nAnswer: " + a.Contains(con));
+            Console.WriteLine("\nIs con string equal to cat string?\nAnswer: " + con.Equals(cat));
+            Console.WriteLine("\nIndex of o in original string: " + a.IndexOf('o'));
+
+            string b = (String)a.Clone();
+            Console.WriteLine("\nCloned original string: " + b);
+
+            string r = a.Replace("Advanced Web", "C#");
+            Console.WriteLine("\nReplaced original string: " + r);
+            string ins = r.Insert(0, "Welcome to ");
+            Console.WriteLine("\nInsert to replaced string: " + ins);
+            string sub = ins.Substring(0, 6);
+            Console.WriteLine("\nSubstring: " + sub);
+        }
+    }
