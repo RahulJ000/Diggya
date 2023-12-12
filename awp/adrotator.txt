@@ -1,0 +1,49 @@
+WebForm1.aspx
+
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="adrotator.WebForm1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:AdRotator ID="AdRotator1" runat="server" DataSourceID="XmlDataSource2" />
+            <asp:XmlDataSource ID="XmlDataSource2" runat="server" DataFile="~/XMLFile1.xml"></asp:XmlDataSource>
+        </div>
+    </form>
+</body>
+</html>
+
+
+
+XMLFile1.xml
+
+<?xml version="1.0" encoding="utf-8" ?>
+<Advertisements>
+	<Ad>
+		<ImageUrl>car.jpg</ImageUrl>
+		<NavigateUrl>www.google.com</NavigateUrl>
+		<AlternateUrl>car</AlternateUrl>
+		<Impressions>10</Impressions>
+		<Keyword>car</Keyword>
+	</Ad>
+	
+	<Ad>
+		<ImageUrl>911.jpg</ImageUrl>
+		<NavigateUrl>www.wikipedia.org</NavigateUrl>
+		<AlternateUrl>911</AlternateUrl>
+		<Impressions>10</Impressions>
+		<Keyword>911</Keyword>
+	</Ad>
+	<Ad>
+		<ImageUrl>plane.jpg</ImageUrl>
+		<NavigateUrl>www.youtube.com</NavigateUrl>
+		<AlternateUrl>plane</AlternateUrl>
+		<Impressions>10</Impressions>
+		<Keyword>plane</Keyword>
+	</Ad>
+</Advertisements>
