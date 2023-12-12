@@ -1,0 +1,63 @@
+WebUserControl1.ascx
+
+<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="WebUserControl1.ascx.cs" Inherits="usercontrol.WebUserControl1" %>
+<asp:Label ID="Label1" runat="server" Text="Name"></asp:Label>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+<p>
+    <asp:Label ID="Label2" runat="server" Text="City"></asp:Label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+</p>
+<p>
+    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Save" />
+</p>
+<p>
+    <asp:Label ID="Label3" runat="server" Text="Your Name is "></asp:Label>
+</p>
+
+
+WebUserControl1.ascx.cs
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace usercontrol
+{
+    public partial class WebUserControl1 : System.Web.UI.UserControl
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Label3.Text = " Your Name is " + TextBox1.Text + " You Live in " + TextBox2.Text;
+        }
+    }
+}
+
+
+WebForm1.aspx
+
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="usercontrol.WebForm1" %>
+<%@ Register Src="~/WebUserControl1.ascx" TagName="WebUserControl" TagPrefix="uc1" %>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+        </div>
+        <uc1:WebUserControl ID="WebUserControl" runat="server" />
+    </form>
+</body>
+</html>
