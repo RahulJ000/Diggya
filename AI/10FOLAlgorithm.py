@@ -7,7 +7,6 @@ class Predicate:
     def __str__(self):
         return f"{self.subject} is {self.relation} {self.object}."
 
-
 def derive_predicate(relationships, subject):
     derived_predicates = []
     for relation in relationships:
