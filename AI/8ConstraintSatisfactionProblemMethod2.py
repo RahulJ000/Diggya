@@ -20,8 +20,6 @@ print(set(constraints))
 c=len(constraints)
 print(c)
 
-#######
-
 even_numbers = []
 for i in range(4):
     for j in range(4):
