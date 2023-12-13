@@ -2,10 +2,8 @@ import random
 import numpy as np
 import networkx as nx
  
-#coordinate of the points/cities
 coordinate = np.array([[1,2], [30,21], [56,23], [8,18], [20,50], [3,4], [11,6], [6,7], [15,20], [10,9], [12,12]])
  
-#adjacency matrix for a weighted graph based on the given coordinates
 def generate_matrix(coordinate):
     matrix = []
     for i in range(len(coordinate)):
@@ -13,10 +11,9 @@ def generate_matrix(coordinate):
             p = np.linalg.norm(coordinate[i] - coordinate[j])
             matrix.append(p)
     matrix = np.reshape(matrix, (len(coordinate),len(coordinate)))
-    #print(matrix)
+  
     return matrix
- 
-#finds a random solution    
+    
 def solution(matrix):
     points = list(range(0, len(matrix)))
     solution = []
@@ -26,15 +23,12 @@ def solution(matrix):
         points.remove(random_point)
     return solution
  
- 
-#calculate the path based on the random solution
 def path_length(matrix, solution):
     cycle_length = 0
     for i in range(0, len(solution)):
         cycle_length += matrix[solution[i]][solution[i - 1]]
     return cycle_length
  
-#generate neighbors of the random solution by swapping cities and returns the best neighbor
 def neighbors(matrix, solution):
     neighbors = []
     for i in range(len(solution)):
@@ -43,19 +37,16 @@ def neighbors(matrix, solution):
             neighbor[i] = solution[j]
             neighbor[j] = solution[i]
             neighbors.append(neighbor)
-             
-    #assume that the first neighbor in the list is the best neighbor      
+                 
     best_neighbor = neighbors[0]
     best_path = path_length(matrix, best_neighbor)
      
-    #check if there is a better neighbor
     for neighbor in neighbors:
         current_path = path_length(matrix, neighbor)
         if current_path < best_path:
             best_path = current_path
             best_neighbor = neighbor
     return best_neighbor, best_path
- 
  
 def hill_climbing(coordinate):
     matrix = generate_matrix(coordinate)
@@ -74,4 +65,3 @@ def hill_climbing(coordinate):
     return current_path, current_solution
 final_solution = hill_climbing(coordinate)
 print("The solution is \n", final_solution[1])
-
