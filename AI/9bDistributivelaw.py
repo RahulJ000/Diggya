@@ -1,5 +1,4 @@
 import random
-
 def demonstrate_distributive_law():
     a = random.randint(1, 10)
     b = random.randint(1, 10)
