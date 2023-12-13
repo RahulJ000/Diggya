@@ -15,11 +15,8 @@ def derive_predicate(relationships, subject):
             derived_predicates.append(Predicate(subject, relation[1], relation[2]))
     return derived_predicates
 
-
-# Relationships: (subject, relation, object)
 relationships = [("Sachin", "batsman", "cricketer"), ("batsman", "is", "cricketer")]
 
-# Subject for which we want to derive predicates
 subject_to_derive = "Sachin"
 
 derived_predicates = derive_predicate(relationships, subject_to_derive)
