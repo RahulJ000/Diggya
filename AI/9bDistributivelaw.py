@@ -17,5 +17,4 @@ def demonstrate_distributive_law():
     else:
         print("The distributive law does not hold true.")
 
-# Demonstrate the distributive law
 demonstrate_distributive_law()
