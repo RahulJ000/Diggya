@@ -42,5 +42,5 @@ def solveNQ():
         return False
     printSolution(board)
     return True
-# Driver Code
+
 solveNQ()
