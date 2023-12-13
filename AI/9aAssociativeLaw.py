@@ -1,22 +1,21 @@
-#Code for associative law.
+def associative_law_addition(a, b, c):
+    left_association = (a + b) + c
+    right_association = a + (b + c)
+    
+    return left_association, right_association
 
-# Left-right associativity
-# 100 / 10 * 10 is calculated as
-# (100 / 10) * 10 and not
-# as 100 / (10 * 10)
-print(100 / 10 * 10)
- 
-# Left-right associativity
-# 5 - 2 + 3 is calculated as
-# (5 - 2) + 3 and not
-# as 5 - (2 + 3)
-print(5 - 2 + 3)
- 
-# left-right associativity
-print(5 - (2 + 3))
- 
-# right-left associativity
-# 2 ** 3 ** 2 is calculated as
-# 2 ** (3 ** 2) and not
-# as (2 ** 3) ** 2
-print(2 ** 3 ** 2)
+def associative_law_multiplication(a, b, c):
+    left_association = (a * b) * c
+    right_association = a * (b * c)
+    
+    return left_association, right_association
+
+a, b, c = 2, 3, 4
+left_result_addition, right_result_addition = associative_law_addition(a, b, c)
+print(f"Addition Associative Law: ({a} + {b}) + {c} = {left_result_addition}")
+print(f"Addition Associative Law: {a} + ({b} + {c}) = {right_result_addition}")
+
+a, b, c = 2, 3, 4
+left_result_multiplication, right_result_multiplication = associative_law_multiplication(a, b, c)
+print(f"Multiplication Associative Law: ({a} * {b}) * {c} = {left_result_multiplication}")
+print(f"Multiplication Associative Law: {a} * ({b} * {c}) = {right_result_multiplication}")
