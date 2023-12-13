@@ -81,8 +81,6 @@ try:
             print("C ",end="")
         print("\n")
   
-      
-  
         if(((lC==3)and (lM == 1))or((lC==3)and(lM==2))or((lC==2)and(lM==1))or((rC==3)and (rM == 1))or((rC==3)and(rM==2))or((rC==2)and(rM==1))):
             print("Cannibals eat missionaries:\nYou lost the game")
             break
