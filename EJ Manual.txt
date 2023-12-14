@@ -1,115 +1,3 @@
-﻿S.No.
-	Title Of The Experiment 
-	Date
-	Remark
-	1
-	To Perform Arithmetic Operation Using Servlet 
-	28/06/23
-	
-
-	2
-	:To validate a user by Name and password.
-	28/06/23
-	
-
-	3
-	Display implicit object by JSP.
-	05/07/23
-	
-
-	4
-	To find number times user visited the page.
-	05/07/23
-	
-
-	5
-	To update sql table by JSPb page.
-	12/07/23
-	
-
-	6
-	Currency converter Program
-	12/07/23
-	
-
-	7
-	Use of Request Dispatcher to welcome user
-	19/07/23
-	
-
-	8
-	Working with JSTL.
-	19/07/23
-	
-
-	9
-	To view data from database after submitting..
-	26/07/23
-	
-
-	10
-	Register user in database(Room booking
-	26/07/23
-	
-
-	11
-	Validating user by JSP.
-	02/08/23
-	
-
-	12
-	Create a registration and login JSP application to register and authenticate the user
-	02/08/23
-	
-
-	13
-	Create a Servlet Application To Uploading File.
-	09/08/23
-	
-
-	14
-	Create a Servlet Application to download File
-	09/08/23
-	
-
-	15
-	To Create Quiz using Servlet
-	23/08/23
-	
-
-	16
-	Expression language by using JSP
-	23/08/23
-	
-
-	17
-	Use JDBC for data insertion for valid user  
-	
-
-	
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Practical 1
 AIM: To Perform Arithmetic Operation using Servlet.
 HTML Code: index.html
@@ -163,14 +51,6 @@ double result =0;
  out.println("</body></html>");
 }
  }
-OUTPUT:
-  
-
-  
-
-
-
-
 
 
 
@@ -215,17 +95,6 @@ public void doGet(HttpServletRequest request, HttpServletResponse response)
  out.println("</body></html>");}}
 
 
-Output:
-  
-
-  
-
-  
-
-
-
-
-
 
 
 Practical 3
@@ -256,26 +125,6 @@ JSP Code:
         Last Access Time <%= new java.util.Date(session.getLastAccessedTime()) %>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-Output:
-  
-
-
-
-
-
-
 
 
 
@@ -324,15 +173,6 @@ out.println("You visited "+i+" times");
 i++;}}
 
 
-Output:
-  
-
-  
-
-
-
-
-
 
 
 Practical 5
@@ -379,23 +219,6 @@ else{
  }
  }catch(Exception e){out.println(e);}
  %></body></html>
-
-
-Output:
-  
-
-  
-
-  
-
-
-
-  
-
-  
-
-
-
 
 
 
@@ -453,14 +276,6 @@ public ccbeans(){}
 public double r2Dollor(double r){ return r/82.04; }
 public double d2Rupees(double d) {return d*82.04;}
 }
-Output:
-  
-
-  
-  
-
-
-
 
 
 
@@ -550,15 +365,6 @@ public class welcome extends HttpServlet {
             out.println("</body>");
             out.println("</html>");
         }  }
-
-
-Output:
-  
-
-
-
-  
-
 
 
   
